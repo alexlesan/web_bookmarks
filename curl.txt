@@ -1,0 +1,21 @@
+1. Get user token:
+    curl --location --request POST 'http://127.0.0.1:8000/api/v1/accounts/token-auth' \
+            --header 'Content-Type: application/json' \
+            --form 'username="alesan"' \
+            --form 'password="password123"'
+
+2. Get the list of bookmarks:
+    curl --location --request GET 'http://127.0.0.1:8000/api/v1/bookmarks' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Token e5e557c5ea7ca0d79c57a6b8d8d1701dd2aa6896' \
+
+3. Create new bookmark:
+    curl --location --request POST 'http://127.0.0.1:8000/api/v1/bookmarks/' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Token e5e557c5ea7ca0d79c57a6b8d8d1701dd2aa6896' \
+    --data-raw '{
+        "title": "TESASDa ",
+        "url": "http://google.com",
+        "created_at": "2021-11-04T12:00",
+        "is_public": "1"
+    }'
